@@ -15,6 +15,10 @@ class BlogView(ListView):
     model=Post
     template_name='Blog/blog.html'
 
+class PostDetailView(DetailView):
+    model=Post
+    template_name='Blog/post_detalles.html'
+
 
 def lugares(request):
     return render(request, 'Blog/lugares.html', {})

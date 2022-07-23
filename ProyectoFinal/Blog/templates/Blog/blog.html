@@ -2,7 +2,7 @@
 
 <ul>
 {% for post in object_list %}
-    <li>{{ post.titulo}} - {{ post.autor }}<br/>
+    <li><a href="{% url 'post-detalles' post.pk %}" >{{ post.titulo}}</a> - {{ post.autor }}<br/>
     {{ post.cuerpo }}</li>
 
 
