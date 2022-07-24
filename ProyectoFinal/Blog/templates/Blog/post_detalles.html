@@ -1,6 +1,18 @@
+{% extends "Blog/padre.html" %}
+{% load static %}
+{% block title %}{{post.titulo}}{% endblock %}
 
-
+{% block contenidoQueCambia %}
+<br/>
+<div class="container">
 <h1>{{ post.titulo }}</h1>
+<h4>{{ post.subtitulo }}</h4>
 <small>Por: {{ post.autor }}</small><br/>
+<small>{{ post.fecha }}</small><br/>
 <hr>
 {{ post.cuerpo }}
+
+<br/><br/>
+<a href="{% url 'blog' %}" class="btn btn-outline-secondary">Atras</a>
+{% endblock %}
+</div>

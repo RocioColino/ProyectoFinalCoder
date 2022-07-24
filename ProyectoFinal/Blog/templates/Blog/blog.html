@@ -1,17 +1,21 @@
 {% extends "Blog/padre.html" %}
 {% load static %}
-
+{% block title %}Blog{% endblock %}
+<br/>
 {% block contenidoQueCambia %}
  <!-- Page header with logo and tagline-->
  <header class="py-5 bg-light border-bottom mb-4">
-    <div class="container">
+<div class="container">
+
+
         <div class="text-center my-5">
             <h1 class="fw-bolder">Blog</h1>
             <p class="lead mb-0">A Bootstrap 5 starter layout for your next blog homepage</p>
         </div>
     </div>
 </header>
-
+<br/>
+<div class="container">
 <ul>
     {% for post in object_list %}
         <li><h5><a href="{% url 'post-detalles' post.pk %}" >{{ post.titulo}}</a> - {{ post.autor }}<br/>
@@ -22,3 +26,4 @@
     {% endfor %}
     </ul>
 {% endblock %}
+ </div>
