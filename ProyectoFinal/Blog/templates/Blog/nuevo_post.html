@@ -1,0 +1,18 @@
+{% extends "Blog/padre.html" %}
+{% load static %}
+{% block title %}Crear nuevo post{% endblock %}
+
+{% block contenidoQueCambia %}
+
+</br>
+</br>
+<div class="container">
+ <h1>Crear un nuevo post</h1>
+</br>
+ <form method="POST">
+    {% csrf_token%}
+    {{ form.as_p}}
+    <button class="btn btn-outline-success">Publicar</button><a href="{% url 'blog' %}" class="btn btn-outline-secondary">Atras</a>
+ </form>
+</div>
+{% endblock %}

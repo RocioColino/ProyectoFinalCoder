@@ -1,5 +1,6 @@
+from ssl import CertificateError
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from .models import Post
 
 def inicio(request):
@@ -19,6 +20,10 @@ class PostDetailView(DetailView):
     model=Post
     template_name='Blog/post_detalles.html'
 
+class NuevoPostView(CreateView):
+    model=Post
+    template_name='Blog/nuevo_post.html'
+    fields='__all__'
 
 def lugares(request):
     return render(request, 'Blog/lugares.html', {})
