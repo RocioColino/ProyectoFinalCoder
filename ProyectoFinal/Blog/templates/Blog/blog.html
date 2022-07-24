@@ -21,8 +21,9 @@
         <li><h5><a href="{% url 'post-detalles' post.pk %}" >{{ post.titulo}}</a> - {{ post.autor }}<br/>
         {{ post.cuerpo }}</h5></li>
     
- <li><h5><a href="{% url 'nuevo-post' %}" class="btn btn-outline-secondary">Crear un nuevo post</a>
+ 
     {% endfor %}
     </ul>
+    <a href="{% url 'nuevoblog' %}">Crear un nuevbo post </a>
 {% endblock %}
  </div>
