@@ -14,7 +14,7 @@
     <small>{{ post.fecha }}</small><br/>
 
 <hr>
-{{ post.cuerpo }}
+{{ post.cuerpo|safe }}
 
 <br/><br/>
 <a href="{% url 'blog' %}" class="btn btn-outline-secondary">Atras</a>
