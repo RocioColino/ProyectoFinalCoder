@@ -7,8 +7,11 @@
 <div class="container">
 <h1>{{ post.titulo }}</h1>
 <h4>{{ post.subtitulo }}</h4>
-<small>Por: {{ post.autor }}<a href="{% url 'update_post' post.pk %}">(Editar)</a></small><br/>
-<small>{{ post.fecha }}</small><br/>
+<small>Por: {{ post.autor }}
+    {% if user.is_authenticated %}
+        <a href="{% url 'update_post' post.pk %}">(Editar)</a></small><br/>
+    {% endif%}
+    <small>{{ post.fecha }}</small><br/>
 
 <hr>
 {{ post.cuerpo }}

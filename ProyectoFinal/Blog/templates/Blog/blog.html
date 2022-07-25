@@ -23,12 +23,12 @@
         </small>
         {{ post.autor }} - {{ post.fecha }}
         <small></br>
-            
-            <a href="{% url 'update_post' post.pk %}">(Editar)</a>
-            <a href="{% url 'delete_post' post.pk %}">(Eliminar)</a></a></small> 
-        
+            {% if user.is_authenticated %}
+                 <a href="{% url 'update_post' post.pk %}">(Editar)</a>
+                 <a href="{% url 'delete_post' post.pk %}">(Eliminar)</a></a></small> 
+            {% endif%}
         </br>
-        {{ post.cuerpo }}</li>
+        {{ post.cuerpo|slice:":150" }}</li>
     
  
     {% endfor %}
