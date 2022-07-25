@@ -19,7 +19,7 @@
 <div class="container">
 <ul>
     {% for post in object_list %}
-        <li><h4><a href="{% url 'post-detalles' post.pk %}" >{{ post.titulo}}</h4>
+        <h4><a href="{% url 'post-detalles' post.pk %}" >{{ post.titulo}}</h4>
         </small>
         {{ post.autor.first_name }} {{ post.autor.last_name }} - {{ post.fecha }}
         <small></br>
@@ -30,7 +30,8 @@
                 {% endif %}
             {% endif%}
         </br>
-        {{ post.cuerpo|slice:":150"|safe }}</li>
+        {{ post.fragmento}}
+        
     
  
     {% endfor %}

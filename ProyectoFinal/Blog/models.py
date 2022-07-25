@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.forms import CharField, ImageField
 from django.urls import reverse
 from datetime import datetime, date
+from ckeditor.fields import RichTextField
 
 
 class Categoria(models.Model):
@@ -21,8 +22,10 @@ class Post(models.Model):
    autor=models.ForeignKey(User, on_delete=models.CASCADE)
    fecha=models.DateField(auto_now_add=True)
    imagen=models.ImageField(null=True, blank=True, upload_to="images/")
-   cuerpo=models.TextField()
+   cuerpo=RichTextField(blank=True, null=True)
+   #cuerpo=models.TextField()
    categoria=models.CharField(max_length=255, default='Turismo')
+   fragmento=models.CharField(max_length=150)
 
    def __str__(self):
        return self.titulo + '︱' + str(self.autor) + '︱' + str(self.fecha)
