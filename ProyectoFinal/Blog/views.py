@@ -1,7 +1,7 @@
 from ssl import CertificateError
 from django.shortcuts import render, redirect
 from Blog.models import *
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .forms import PostForm
 
 from .models import *
@@ -29,6 +29,11 @@ class AddPostView(CreateView):
     form_class=PostForm
     template_name= 'Blog/add_post.html'
     #fields='__all__'
+
+class UpdatePostView(UpdateView):
+    model=Post
+    template_name='update_post.html'
+    fields='__all__'
 
 def lugares(request):
     return render(request, 'Blog/lugares.html', {})

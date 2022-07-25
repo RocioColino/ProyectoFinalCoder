@@ -19,7 +19,7 @@
 <div class="container">
 <ul>
     {% for post in object_list %}
-        <li><h5><a href="{% url 'post-detalles' post.pk %}" >{{ post.titulo}}</a> - {{ post.autor }}<br/>
+        <li><h5><a href="{% url 'post-detalles' post.pk %}" >{{ post.titulo}}</a> - {{ post.autor }} - <small><a href="{% url 'update_post' post.pk %}">(Editar)</a></small><br/>
         {{ post.cuerpo }}</h5></li>
     
  

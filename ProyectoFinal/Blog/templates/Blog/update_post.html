@@ -1,12 +1,12 @@
 {% extends "Blog/padre.html" %}
 {% load static %}
-{% block title %}Crear un post{% endblock %}
+{% block title %}Editar{% endblock %}
 {% block contenidoQueCambia %}
  <!-- Page header with logo and tagline-->
  <header class="py-5 bg-light border-bottom mb-4">
     <div class="container">
         <div class="text-center my-5">
-            <h1 class="fw-bolder">Crear un Post</h1>
+            <h1 class="fw-bolder">Editar Post</h1>
             <p class="lead mb-0"></p>
         </div>
     </div>
@@ -16,7 +16,7 @@
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class="btn btn-outline-success">Publicar</button>
+        <button class="btn btn-outline-success">Actualizar</button>
         <h6><a href="{% url 'blog' %}" class="btn btn-outline-secondary">Atras</a></h6>
     </form>
 </div>
