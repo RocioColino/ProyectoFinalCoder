@@ -3,14 +3,19 @@
 {% block title %}{{post.titulo}}{% endblock %}
 
 {% block contenidoQueCambia %}
+
 <br/>
 <div class="container">
 <h1>{{ post.titulo }}</h1>
 <h4>{{ post.subtitulo }}</h4>
-<small>Por: {{ post.autor }}
+<small>Por: {{ post.autor.first_name }} {{ post.autor.last_name }}
     {% if user.is_authenticated %}
-        <a href="{% url 'update_post' post.pk %}">(Editar)</a></small><br/>
-    {% endif%}
+        {% if post.autor.id == user.id %}
+        
+            <a href="{% url 'update_post' post.pk %}">(Editar)</a></small><a href="{% url 'delete_post' post.pk %}">(Eliminar)</a></small><br/>
+            
+        {% endif %}
+    {% endif %}
     <small>{{ post.fecha }}</small><br/>
 
 <hr>
