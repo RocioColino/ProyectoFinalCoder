@@ -32,7 +32,7 @@ class AddPostView(CreateView):
 
 class UpdatePostView(UpdateView):
     model=Post
-    template_name='update_post.html'
+    template_name='Blog/update_post.html'
     fields='__all__'
 
 def lugares(request):
