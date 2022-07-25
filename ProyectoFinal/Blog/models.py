@@ -5,6 +5,16 @@ from django.urls import reverse
 from datetime import datetime, date
 
 
+class Categoria(models.Model):
+    nombre=models.CharField(max_length=255)
+
+    def __str__(self):
+           return self.nombre 
+
+    def get_absolute_url(self):
+        return reverse('blog')
+
+
 class Post(models.Model):
    titulo=models.CharField(max_length=255)
    subtitulo=models.CharField(max_length=200)
@@ -12,6 +22,7 @@ class Post(models.Model):
    fecha=models.DateField(auto_now_add=True)
    imagen=models.ImageField(null=True, blank=True, upload_to="images/")
    cuerpo=models.TextField()
+   categoria=models.CharField(max_length=255, default='Turismo')
 
    def __str__(self):
        return self.titulo + '︱' + str(self.autor) + '︱' + str(self.fecha)
