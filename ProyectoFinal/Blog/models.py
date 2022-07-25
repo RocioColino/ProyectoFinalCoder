@@ -7,8 +7,8 @@ class Post(models.Model):
    titulo=models.CharField(max_length=255)
    subtitulo=models.CharField(max_length=200)
    autor=models.ForeignKey(User, on_delete=models.CASCADE)
-   fecha=models.DateField()
-   imagen=models.ImageField()
+   fecha=models.DateField(auto_now_add=True)
+   imagen=models.ImageField(null=True, blank=True, upload_to="images/")
    cuerpo=models.TextField()
 
    def __str__(self):

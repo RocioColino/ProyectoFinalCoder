@@ -15,6 +15,7 @@
     </div>
 </header>
 <br/>
+<div class="container"><h6><a href="{% url 'add_post' %}" class="btn btn-outline-secondary">Crear Post</a></h6></div>
 <div class="container">
 <ul>
     {% for post in object_list %}
@@ -24,6 +25,6 @@
  
     {% endfor %}
     </ul>
-    <a href="{% url 'nuevoblog' %}">Crear un nuevbo post </a>
+       
 {% endblock %}
  </div>
