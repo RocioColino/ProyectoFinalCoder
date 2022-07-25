@@ -13,7 +13,7 @@ for item in choices:
 class PostForm(forms.ModelForm):
     class Meta:
         model= Post
-        fields=('titulo', 'subtitulo','autor', 'categoria', 'cuerpo', 'fragmento')
+        fields=('titulo', 'subtitulo','autor', 'categoria', 'cuerpo', 'fragmento', 'imagen')
 
         widgets={
             'title':forms.TextInput(attrs={'class':'form-control'}),
