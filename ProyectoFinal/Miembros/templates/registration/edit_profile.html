@@ -11,7 +11,11 @@
         </div>
     </div>
 </header>
+
+
 <div class="container">
+    {{ user.perfil.bio }}
+
 <div class="form-group">
     <form method="POST">
         {% csrf_token %}

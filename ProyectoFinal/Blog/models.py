@@ -16,6 +16,15 @@ class Categoria(models.Model):
         return reverse('blog')
 
 
+class Perfil(models.Model):
+    user=models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    bio=models.TextField()
+    
+    def __str__(self):
+       return str(self.user)
+
+
+
 class Post(models.Model):
    titulo=models.CharField(max_length=255)
    subtitulo=models.CharField(max_length=200)
@@ -34,13 +43,13 @@ class Post(models.Model):
         return reverse('blog')
 
 
-class Lugares(models.Model):
-    nombre=models.CharField(max_length=250)
-    imagen=models.ImageField()
-    descripcion=models.TextField()
-    direccion=models.CharField(max_length=50)
-    contacto=models.CharField(max_length=100)
+#class Lugares(models.Model):
+    #nombre=models.CharField(max_length=250)
+    #imagen=models.ImageField()
+    #descripcion=models.TextField()
+    #direccion=models.CharField(max_length=50)
+    #contacto=models.CharField(max_length=100)
 
-    def __str__(self):
-        return self.nombre + '︱' + self.contacto
+    #def __str__(self):
+        #return self.nombre + '︱' + self.contacto
 

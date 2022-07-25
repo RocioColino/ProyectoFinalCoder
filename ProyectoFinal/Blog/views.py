@@ -50,5 +50,5 @@ class DeletePostView(DeleteView):
     template_name='Blog/delete_post.html'
     success_url= reverse_lazy('blog')
 
-def lugares(request):
-    return render(request, 'Blog/lugares.html', {})
+#def lugares(request):
+    #return render(request, 'Blog/lugares.html', {})
