@@ -12,16 +12,21 @@
     </div>
 </header>
 {% if user.is_authenticated %}
-<div class="container">
-<div class="form-group">
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-outline-success">Publicar</button>
-        <h6><a href="{% url 'blog' %}" class="btn btn-outline-secondary">Atras</a></h6>
-    </form>
-</div>
-</div>
+    <div class="container">
+        <div class="form-group">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-outline-success">Publicar</button>
+                <h6><a href="{% url 'blog' %}" class="btn btn-outline-secondary">Atras</a></h6>
+            </form>
+        </div>
+    </div>
+    <script>
+        var name = "{{ user.id }}";
+        document.getElementById("user").value = name;
+
+    </script>
 {% else %}
 Acceso no permitido
 {% endif%}
