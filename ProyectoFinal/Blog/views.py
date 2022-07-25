@@ -1,10 +1,11 @@
 from ssl import CertificateError
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from Blog.models import *
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
-from .forms import PostForm
-
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from .forms import PostForm, EditForm
 from .models import *
+from django.urls import reverse_lazy
 #from .forms import *
 
 def inicio(request):
@@ -19,6 +20,8 @@ def about(request):
 class BlogView(ListView):
     model=Post
     template_name='Blog/blog.html'
+    #ordering=['-id']
+    ordering=['-fecha']
 
 class PostDetailView(DetailView):
     model=Post
@@ -32,8 +35,14 @@ class AddPostView(CreateView):
 
 class UpdatePostView(UpdateView):
     model=Post
+    form_class=EditForm
     template_name='Blog/update_post.html'
-    fields='__all__'
+    #fields='__all__'
+
+class DeletePostView(DeleteView):
+    model=Post
+    template_name='Blog/delete_post.html'
+    success_url= reverse_lazy('blog')
 
 def lugares(request):
     return render(request, 'Blog/lugares.html', {})
