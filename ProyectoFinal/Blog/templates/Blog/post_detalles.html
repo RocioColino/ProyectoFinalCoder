@@ -19,6 +19,7 @@
             {% endif %}
             <small>{{ post.fecha }}</small><br/>
 
+     <hr>
         <h4>
         {% if post.imagen %}
              <img src="{{ post.imagen.url }}">"
@@ -28,5 +29,46 @@
 
          <br/><br/>
         <a href="{% url 'blog' %}" class="btn btn-outline-secondary">Atras</a>
+    <br/>
+        <hr>
+
+
+        <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{{ post.autor.perfil.avatar.url}}" class="img-fluid rounded-start">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{ post.autor.first_name }} {{ post.autor.last_name }}</h5>
+                  <p class="small text-muted">
+                    {% if  post.autor.website_url  %}
+                         <a href="{{ post.autor.website_url }}">Website</a> 
+                    {% endif %}
+                    
+                    {% if post.autor.facebook_url %}              
+                        |<a href="{{ post.autor.facebook_url }}">Facebook</a>  
+
+                    {% endif %}
+
+                    {% if post.autor.instagram_url %}
+                        |<a href="{{ post.autor.instagram_url }}">Instagram</a> 
+                    {% endif %}
+                    
+                    {% if post.autor.twitter_url %}
+                        |<a href="{{ post.autor.twitter_url }}">Twitter</a>
+                    {% endif %} 
+
+                  </p>
+                  <p class="card-text">{{ post.autor.perfil.bio}}</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+    
+
     </div>
+
+
 {% endblock %}
