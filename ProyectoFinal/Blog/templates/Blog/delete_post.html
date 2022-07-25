@@ -21,7 +21,7 @@
             <form method="POST">
                 {% csrf_token %}
 
-                <strong>Estas seguro que quieres eliminar {{post.titulo}} ?</strong></form></br></br>
+                <strong>Estas seguro que quieres eliminar {{post.titulo}} ?</strong></br></br>
 
                 <button class="btn btn-outline-secondary">Eliminar</button>
                 <h6><a href="{% url 'blog' %}" class="btn btn-outline-secondary">Atras</a></h6>
