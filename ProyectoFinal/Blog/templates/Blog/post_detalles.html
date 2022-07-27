@@ -29,27 +29,20 @@
         <br/>
         <hr>
     </div>
-
-    <div>     
-        {% if post.autor.perfil.avatar %}
-            <img src="{{ post.autor.perfil.avatar.url}}" class="img-fluid rounded-start">
-        {% endif %}
     
-        <p>{{ post.autor.first_name }} {{ post.autor.last_name }}</p>
-        
-        {%  if post.author.profile.id %}
-            <h5><p><a href = "{% url 'show_profile_page' post.autor.perfil.id %}"> Profile Page</a></p></h5>
+    <div class="card" style="width: 18rem;">
+        {% if post.autor.perfil.avatar %}
+            <img src="{{ post.autor.perfil.avatar.url}}" class="card-img-top">
         {% endif %}
-        
-        {% if  post.autor.website_url  %}
-            <h5><p><a href="{{ post.autor.website_url }}">Website</a></p></h5> 
-        {% endif %}
-        {% if post.autor.facebook_url %}              
-            <h5><p>|<a href="{{ post.autor.facebook_url }}">Facebook</a></p></h5>   
-        {% endif %}
-        <h5><p class="card-text">{{ post.autor.perfil.bio}}</p></h5>  
-                    
-    </div>
+            <div class="card-body">
+          <h5 class="card-title"><p>{{ post.autor.first_name }} {{ post.autor.last_name }}</p></h5>
+          <p class="card-text">{{ post.autor.perfil.bio}}</p>
+           
+        </div>
+      </div>
+
+
+
 
 </br>
 <hr>
