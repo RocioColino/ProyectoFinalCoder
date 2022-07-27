@@ -4,13 +4,21 @@
 
 {% block contenidoQueCambia %}
  <!-- Page header with logo and tagline-->
- <header class="py-5 bg-light border-bottom mb-4">
-    <div class="container">
-        <div class="text-center my-5">
-            <h1 class="fw-bolder">About!</h1>
-            <p class="lead mb-0">A Bootstrap 5 starter layout for your next blog homepage</p>
+ 
+
+<div class="card mb-3">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{% static 'images/about.jpeg' %}" class="img-fluid rounded-start">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body"></br></br>
+          <h5 class="card-title">Sobre mí</h5>
+          <p class="card-text">Mi nombre es Rocío y soy Uruguaya. Vivo en Corea del Sur desde agosto de 2018. Soy traductora e intérprete científica de español-inglés y vine a Corea a estudiar un master en gestión de negocios. La idea de este proyecto es que sea un lugar en donde pueda, idealmente, publicar posts con información sobre diferentes lugares de Corea con datos relevantes en distintas áreas.</p>
+          
         </div>
+      </div>
     </div>
-</header>
+  </div>
 
 {% endblock %}

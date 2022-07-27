@@ -16,7 +16,7 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-0">
-                <a class="navbar-brand" href="#!">Mi blog sobre Corea</a>
+                <a class="navbar-brand" href="#!">turismo en Corea</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -56,15 +56,28 @@
                 </div>
             </div>
         </nav>
-        <!-- Page header with logo and tagline-->
-        <header class="py-5 bg-light border-bottom mb-4">
-            <div class="container">
-                <div class="text-center my-5">
-                    <h1 class="fw-bolder">Welcome toInicio!</h1>
-                    <p class="lead mb-0">A Bootstrap 5 starter layout for your next blog homepage</p>
-                </div>
+ <!-- Page header with logo and tagline-->
+ <div class="card text-bg-dark">
+     <img src="{% static 'images/fondo.jpg' %}" class="card-img" >
+    
+            <div class="card-img-overlay">
+            </br></br></br></br>
+                <header  class="py-5 bg-light border-bottom mb-4">
+                    <div class="container">
+                        <div class="text-center my-8">
+                            <h1 class="fw-bolder">Bienvenidos a mi blog</h1>
+                            <p class="lead mb-2">Este es un blog dedicado a compartir informacion sobre cosas que ver y lugares a visitar en Corea del Sur.</p>
+                            <br/>
+                            <h6><a href="{% url 'blog' %}" class="btn btn-dark">Ir al blog</a></h6>
+                        </div>
+                    </div>
+                </header>
+              
+                
+              
             </div>
-        </header>
+          </div>
+        
     <!-- Footer-->
  <footer class="py-5 bg-dark">
     <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Blog sobre Corea 2022</p></div>

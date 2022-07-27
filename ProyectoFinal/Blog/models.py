@@ -36,7 +36,7 @@ class Post(models.Model):
    subtitulo=models.CharField(max_length=200)
    autor=models.ForeignKey(User, on_delete=models.CASCADE)
    fecha=models.DateField(auto_now_add=True)
-   imagen=models.ImageField(null=True, blank=True, upload_to="images/")
+   imagen=models.ImageField(null=True, blank=True, upload_to="images/", default='images/default_blog.jpg')
    cuerpo=RichTextField(blank=True, null=True)
    #cuerpo=models.TextField()
    categoria=models.CharField(max_length=255, default='Turismo')

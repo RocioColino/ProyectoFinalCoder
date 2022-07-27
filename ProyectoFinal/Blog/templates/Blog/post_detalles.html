@@ -9,71 +9,46 @@
             
         <h1>{{ post.titulo }}</h1>
         <h4>{{ post.subtitulo }}</h4>
-            <small>Por: {{ post.autor.first_name }} {{ post.autor.last_name }}
+        <small>Por: {{ post.autor.first_name }} {{ post.autor.last_name }}
             {% if user.is_authenticated %}
                 {% if post.autor.id == user.id %}
-                
                     <a href="{% url 'update_post' post.pk %}">(Editar)</a></small><a href="{% url 'delete_post' post.pk %}">(Eliminar)</a></small><br/>
-                    
                 {% endif %}
             {% endif %}
-            <small>{{ post.fecha }}</small><br/>
-
-     <hr>
-        <h4>
-        {% if post.imagen %}
-             <img src="{{ post.imagen.url }}">"
-        {% endif %}
-        <br/>
-        {{ post.cuerpo|safe }}
-
-         <br/><br/>
-        <a href="{% url 'blog' %}" class="btn btn-outline-secondary">Atras</a>
-    <br/>
+        <small>{{ post.fecha }}</small><br/>
+        <small>Categoria: {{ post.categoria}}</small>
         <hr>
+        
+            {% if post.imagen %}
+                <img src="{{ post.imagen.url }}">
+            {% endif %}
+            <br/><br/>
+            {{ post.cuerpo|safe }}
+        <br/><br/>
+            <a href="{% url 'blog' %}" class="btn btn-outline-secondary">Atras</a>
+        <br/>
+        <hr>
+    </div>
 
-
-        <div class="card mb-3">
-            <div class="row g-0">
-              <div class="col-md-4">
+    <div>     
         {% if post.autor.perfil.avatar %}
-                <img src="{{ post.autor.perfil.avatar.url}}" class="img-fluid rounded-start">
-       
-        {% else %}
-                <img src="{% static 'images/default_profile.jpg' %}" class="img-fluid rounded-start">
-
+            <img src="{{ post.autor.perfil.avatar.url}}" class="img-fluid rounded-start">
         {% endif %}
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">{{ post.autor.first_name }} {{ post.autor.last_name }}</h5>
-                  <p class="small text-muted">
-                    {% if  post.autor.website_url  %}
-                         <a href="{{ post.autor.website_url }}">Website</a> 
-                    {% endif %}
-                    
-                    {% if post.autor.facebook_url %}              
-                        |<a href="{{ post.autor.facebook_url }}">Facebook</a>  
-
-                    {% endif %}
-
-                    {% if post.autor.instagram_url %}
-                        |<a href="{{ post.autor.instagram_url }}">Instagram</a> 
-                    {% endif %}
-                    
-                    {% if post.autor.twitter_url %}
-                        |<a href="{{ post.autor.twitter_url }}">Twitter</a>
-                    {% endif %} 
-
-                  </p>
-                  <p class="card-text">{{ post.autor.perfil.bio}}</p>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
     
-
+        <p>{{ post.autor.first_name }} {{ post.autor.last_name }}</p>
+        
+        {%  if post.author.profile.id %}
+            <h5><p><a href = "{% url 'show_profile_page' post.autor.perfil.id %}"> Profile Page</a></p></h5>
+        {% endif %}
+        
+        {% if  post.autor.website_url  %}
+            <h5><p><a href="{{ post.autor.website_url }}">Website</a></p></h5> 
+        {% endif %}
+        {% if post.autor.facebook_url %}              
+            <h5><p>|<a href="{{ post.autor.facebook_url }}">Facebook</a></p></h5>   
+        {% endif %}
+        <h5><p class="card-text">{{ post.autor.perfil.bio}}</p></h5>  
+                    
     </div>
 
 
