@@ -11,13 +11,26 @@
         </div>
     </div>
 </header>
+</br>
 <div class="container">
 <div class="form-group">
     <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-outline-success">Login</button>
+        <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Nombre de Usuario</label>
+              <input type="text" class="form-control" name="username">
+              
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" name="password">
+            </div>
+            <button class="btn btn-outline-success">Login</button>
+        </form>
     </form>
+</br></br></br>
 </div>
 </div>
 
