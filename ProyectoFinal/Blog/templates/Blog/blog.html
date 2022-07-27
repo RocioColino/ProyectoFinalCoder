@@ -15,34 +15,39 @@
     </div>
 </header>
 <br/>
-<div class="container"><h6><a href="{% url 'add_post' %}" class="btn btn-outline-secondary">Crear Nuevo Post</a></h6></div>
+<div class="container"><h6><a href="{% url 'add_post' %}" class="btn btn-outline-secondary">Crear Nuevo Post</a></h6></div> </br>  <div class="container"><h6><a href="{% url 'busqueda_post' %}" class="btn btn-outline-secondary">Buscar post</a></h6></div>
 
-<ul>
-    {% for post in object_list %}
-            
-                    {% if post.imagen %}
-                        <img src="{{ post.imagen.url }}" class="card-img-top" >
+{% for post in object_list %}
+                              
+    
+    {% if post.imagen %}
+        <div class="card mb-9"  style="max-width: 1200px;">
+                <img src="{{ post.imagen.url }}" class="card-img-top" >
+    {% endif %}
+        <div class="card-body"  >
+            <h5 class="card-title" >{{ post.titulo}}</h5>{{ post.autor.first_name }} {{ post.autor.last_name }} - {{ post.fecha }}</h5>
+            <p class="card-text">{{ post.fragmento }}</p>
+                    {% if user.is_authenticated %}
+                        {% if post.autor.id == user.id %}
+                            <p class="card-text">
+                                <a href="{% url 'update_post' post.pk %}">(Editar)</a>
+                                <a href="{% url 'delete_post' post.pk %}">(Eliminar)</a>
+                             </p>
+                                            
+    
+                            
+             
+                        {% endif %}
                     {% endif %}
+<div class="container"><h6><a href="{% url 'post-detalles' post.pk %}" class="btn btn-outline-dark">Leer mas</a></h6></div>             
+        </div>
+        </div>
+    
                 
-                
-                     <h5 href="{% url 'post-detalles' post.pk %}" >{{ post.titulo}}</h5>{{ post.autor.first_name }} {{ post.autor.last_name }} - {{ post.fecha }}
-                         
-                            {% if user.is_authenticated %}
-                               {% if post.autor.id == user.id %}
-                                      <a href="{% url 'update_post' post.pk %}">(Editar)</a>
-                                      <a href="{% url 'delete_post' post.pk %}">(Eliminar)</a></a></small> 
-                                {% endif %}
-                            {% endif%}
-                        
-                       {{ post.fragmento }}
-                
-                      <a href="{% url 'post-detalles' post.pk %}" class="btn btn-primary">Leer mas</a>
-                 
            
-               
-           
-    {% endfor %}
-</ul>
-       
+        
+{% endfor %} 
+
+
 {% endblock %}
  

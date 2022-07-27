@@ -64,5 +64,16 @@ class AddCommentView(CreateView):
 
 
 
+
+def busqueda_post(request):
+    if request.method=="POST":
+        post=request.POST['titulo']
+        resultado=Post.objects.filter(titulo__icontains=post)
+        return render(request,"Blog/busqueda_post.html", {"post":resultado})
+    
+    return render(request, "Blog/busqueda_post.html", {})
+
+
+
 #def lugares(request):
     #return render(request, 'Blog/lugares.html', {})

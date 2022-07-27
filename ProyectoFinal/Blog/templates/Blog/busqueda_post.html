@@ -1,0 +1,33 @@
+{% extends "Blog/padre.html" %}
+{% load static %}
+{% block title %}Buscar Post{% endblock %}
+{% block contenidoQueCambia %}
+ <!-- Page header with logo and tagline-->
+    <header class="py-5 bg-light border-bottom mb-4">
+        <div class="container">
+            <div class="text-center my-5">
+                <h1 class="fw-bolder">Buscar post</h1>
+                <p class="lead mb-0"></p>
+            </div>
+        </div>
+    </header>
+    <p><h4>Buscar post:</h4>
+        </br>
+        <form action="" method="post">
+            {% csrf_token %}
+
+            <input type="text" name="titulo" id="">
+            <input type="Submit" value="Buscar">
+        </form>
+            </p>
+            <p><h5>Resultado: </h5></p>
+            <ui>
+                {% for x in post %}
+                    <li>{{ post.titulo }}</li>
+                {% endfor %}    
+        
+            </ui>
+  
+
+
+{% endblock %}
