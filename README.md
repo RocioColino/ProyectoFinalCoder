@@ -29,19 +29,16 @@ Un usuario que ya cuente con una cuenta podrá iniciar sesión y pasará a ver e
 ```
 
 ## Video en el que se muestra el funcionamiento de la página
-* [VIDEO](https://www.djangoproject.com/)
+* [VIDEO](https://youtu.be/oCoe9e-5GU4)
 
 
 ## Modelos y rutas de navegación
 
-_Cada categoria tiene su propia página en donde se puede ver un listado con la información pertinente._
+_Hay un blog principal en donde se puede leer, crear, editar y eliminar posts. Los permisos para realizar las ediciones y eliminaciones dependen de si el usuario fue quien creo el post originalmente o no._
 
-_Cada una de las vistas cuenta con una opción de búsqueda y un botón para agregar nuevas entradas._
+_Al final de cada post se puede ver la bio y avatar del autor del mismo. Debajo de esta información hay una sección para dejar comentarios. No es necesario estar logueado para dejar comentarios._
 ```
-Por ejemplo en: http://localhost:8000/appcoder/doctores/ 
-se puede acceder al listado existentes de doctores que ofrecen servicios en inglés.
-En la parte superior de esta vista hay una opción de búsqueda por nombre en la base de datos.
-En la parte inferior, luego de la tabla, se puede acceder a la opción "Agregar doctor".
+Desde cualquier página del sitio se puede acceder al registro o inicio de sesión. 
 
 ```
 
