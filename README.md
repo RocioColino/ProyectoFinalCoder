@@ -4,9 +4,9 @@ _Alumna: Rocio Colino_
 
 ## Objetivo
 
-_El propósito de este proyecto es crear un blog en el que se pueda encontrar información sobre Corea del sur. En este blog se puede encontrar información sobre diferentes tipos de actividades, marcados por las clases/etiquetas: turismo, restaurantes, cafeterias.... los usuarios habilitados para crear posts tienen la opción de generar nuevas categorías de ser necesario. 
+_El propósito de este proyecto es crear un blog en el que se pueda encontrar información sobre Corea del sur. En este blog se puede encontrar información sobre diferentes tipos de actividades, marcados por las clases/etiquetas: turismo, restaurantes, cafeterias.... los usuarios habilitados para crear posts tienen la opción de generar nuevas categorías de ser necesario._ 
 
-Es posible registrarse e iniciar sesión en el blog. Cada usuario registrado tiene la opción de modificar sus datos de usuario y su avatar. Así mismo, es posible para estos usuarios crear nuevos posts, editarlos y/o elimiarlos. _
+_Es posible registrarse e iniciar sesión en el blog. Cada usuario registrado tiene la opción de modificar sus datos de usuario y su avatar. Así mismo, es posible para estos usuarios crear nuevos posts, editarlos y/o elimiarlos._
 
 ### Pasos para abrir el proyecto 
 
@@ -15,9 +15,9 @@ _1. Descargar el repositorio desde GitHub y abrirlo con Visual Studio Code_
 _2. En la terminal de VSC entrar a la ruta: C:\Users\rcoli\Desktop\Learning\CODER\python\ProyectoFinalCoder\ProyectoFinal>_
 
 
-_3. Desde la terminal correr el comando: python manage.py runserver _
+_3. Desde la terminal correr el comando: python manage.py runserver_
 
-_4. En el buscador, acceder a http://localhost:8000/
+_4. En el buscador, acceder a http://localhost:8000/_
 
 _5. En la terminal de VSC correr el comando: python manage.py runserver_
 
