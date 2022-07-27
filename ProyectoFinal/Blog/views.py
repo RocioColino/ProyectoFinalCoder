@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from Blog.models import *
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .forms import PostForm, EditForm
+from .forms import PostForm, EditForm, CommentForm
 from .models import *
 from django.urls import reverse_lazy
 #from .forms import *
@@ -49,6 +49,20 @@ class DeletePostView(DeleteView):
     model=Post
     template_name='Blog/delete_post.html'
     success_url= reverse_lazy('blog')
+
+class AddCommentView(CreateView):
+    model=Comment
+    form_class=CommentForm
+    template_name= 'Blog/add_comment.html'
+    #fields='__all__'
+
+    def form_valid(self, form):
+        form.instance.post_id=self.kwargs['pk']
+        return super().form_valid(form)
+    success_url= reverse_lazy('blog')
+
+
+
 
 #def lugares(request):
     #return render(request, 'Blog/lugares.html', {})
