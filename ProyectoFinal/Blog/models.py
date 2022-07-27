@@ -48,6 +48,18 @@ class Post(models.Model):
    def get_absolute_url(self):
         return reverse('blog')
 
+class Comment(models.Model):
+    post=models.ForeignKey(Post, related_name="comments",on_delete=models.CASCADE)
+    name=models.CharField(max_length=255)
+    body=models.TextField()
+    date_added=models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return '%s - %s' % (self.post.titulo, self.name)
+        
+
+
+
 
 #class Lugares(models.Model):
     #nombre=models.CharField(max_length=250)
